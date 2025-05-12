@@ -1,26 +1,19 @@
-import React from 'react';
+import React from "react";
 
-const TodoList = ({ todos, handleclick }) => {
+const TodoList = ({ todos, handleComplete }) => {
   return (
-    <div>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.text} -{' '}
-            {todo.completed ? (
-              <span data-testid={`todo-completed-${todo.id}`}>Completed</span>
-            ) : (
-              <button
-                data-testid={`todo-button-${todo.id}`}
-                onClick={() => handleclick(todo.id)}
-              >
-                Complete
-              </button>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          {todo.text} -{" "}
+          {todo.completed ? (
+            <span>Completed</span>
+          ) : (
+            <button onClick={() => handleComplete(todo.id)}>Complete</button>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

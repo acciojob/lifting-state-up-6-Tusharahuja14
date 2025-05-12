@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './../styles/App.css';
 import TodoList from "./TodoList";
 
 const App = () => {
@@ -9,18 +8,18 @@ const App = () => {
     { id: 3, text: "Deploy the React app", completed: false },
   ]);
 
-  function handleclick(id) {
+  const handleComplete = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: true } : todo
       )
     );
-  }
+  };
 
   return (
     <div>
       <h1>Todo List</h1>
-      <TodoList todos={todos} handleclick={handleclick} />
+      <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
 };
