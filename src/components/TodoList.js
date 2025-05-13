@@ -6,12 +6,10 @@ const TodoList = ({ todos, handleComplete }) => {
       {todos.map((todo) => (
         <li key={todo.id}>
           {todo.text}{" "}
-          {todo.completed ? (
-            <span>Completed</span>
-          ) : (
-            // ✅ Ensure this is an arrow function
+          {!todo.completed && (
             <button onClick={() => handleComplete(todo.id)}>Complete</button>
           )}
+          {todo.completed && <span>Completed</span>}
         </li>
       ))}
     </ul>
