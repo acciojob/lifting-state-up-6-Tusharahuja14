@@ -5,7 +5,7 @@ const TodoList = ({ todos, handleComplete }) => {
     <ul>
       {todos.map((todo) => (
         <li key={todo.id}>
-          {todo.text} -{" "}
+          {todo.text}{" "}
           {todo.completed ? (
             <span>Completed</span>
           ) : (
