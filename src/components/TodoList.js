@@ -7,12 +7,11 @@ const TodoList = ({ todos, handleComplete }) => {
         <li key={todo.id}>
           {todo.text}{" "}
           {todo.completed ? (
-  <span data-testid={`todo-${todo.id}`}>Completed</span>
-) : (
-  <button onClick={() => handleComplete(todo.id)} data-testid={`button-${todo.id}`}>
-    Complete
-  </button>
-)}
+            <span>Completed</span>
+          ) : (
+            // ✅ Ensure this is an arrow function
+            <button onClick={() => handleComplete(todo.id)}>Complete</button>
+          )}
         </li>
       ))}
     </ul>
